@@ -1,0 +1,148 @@
+﻿LAB-2
+1. Write a program to get temperature in celsius and print the temperature in Fahrenheit.
+This program should prompt the user to enter a temperature in Celsius and then convert it to Fahrenheit using the formula F = (C * 1.8) + 32. The program should then print the temperature in Fahrenheit.
+2. Write a program that reads a number and identifies whether the given number is even or odd.
+This program should prompt the user to enter a number and then determine whether the number is even or odd using the modulus operator (%). If the number is even, the program should print "The number is even." Otherwise, it should print "The number is odd.
+3. Write a program to read a number and identify whether the given number is a prime or not. 
+This program should prompt the user to enter a number and then determine whether the number is prime or not. A number is prime if it is only divisible by 1 and itself. You can check if a number is prime by iterating through all numbers between 2 and the number-1, and checking if the number is divisible by any of them. If it is not divisible by any of them, it is prime. If it is divisible by any of them, it is not prime.
+4. Write a program to generate Fibonacci numbers using the DO WHILE loop.
+This program should prompt the user to enter the number of Fibonacci numbers they want to generate, and then use a DO WHILE loop to generate the Fibonacci sequence up to that number. The Fibonacci sequence starts with 0 and 1, and each subsequent number is the sum of the previous two numbers in the sequence.
+5. Write a program that prompts the user to enter an integer and then prints all the factors of that integer.
+This program should prompt the user to enter a number and then use a loop to find all the factors of the number. Factors are numbers that divide evenly into another number. For example, the factors of 6 are 1, 2, 3, and 6.
+6. Write a program to find the factorial of a given integer.
+This program should prompt the user to enter an integer and then calculate its factorial. The factorial of a number is the product of all the positive integers from 1 to that number. For example, the factorial of 5 is 5 * 4 * 3 * 2 * 1 = 120.
+
+
+________________
+
+
+1. Celsius to Fahrenheit Conversion:
+#include <stdio.h>
+
+
+int main() {
+    float celsius, fahrenheit;
+    printf("Enter temperature in Celsius: ");
+    scanf("%f", &celsius);
+    fahrenheit = (celsius * 1.8) + 32;
+    printf("Temperature in Fahrenheit: %.2f", fahrenheit);
+    return 0;
+}
+
+
+2. Even or Odd Number:
+#include <stdio.h>
+
+
+int main() {
+        int num;
+        printf("Enter a number: ");
+        scanf("%d", &num);
+        if (num % 2 == 0) {
+                    printf("%d is even.", num);
+        } else {
+                    printf("%d is odd.", num);
+        }
+        return 0;
+}
+
+
+3. Prime Number:
+#include <stdio.h>
+int main() {
+        int num, i, isPrime = 1;
+        printf("Enter a number: ");
+        scanf("%d", &num);
+        for (i = 2; i < num; i++) {
+            if (num % i == 0) {
+                isPrime = 0;
+                break;
+            }
+        }
+        if (isPrime == 1) {
+                    printf("%d is prime.", num);
+        } else {
+                    printf("%d is not prime.", num);
+        }
+        return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4. Fibonacci Sequence:
+#include <stdio.h>
+int main() {
+        int num, i, prev = 0, curr = 1, next;
+        printf("Enter the number of Fibonacci numbers to generate: ");
+        scanf("%d", &num);
+        printf("Fibonacci sequence: %d %d ", prev, curr);
+        for (i = 2; i < num; i++) {
+            next = prev + curr;
+            printf("%d ", next);
+            prev = curr;
+            curr = next;
+        }
+        return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5. Factors of a Number:
+#include <stdio.h>
+int main() {
+        int num, i;
+        printf("Enter a number: ");
+        scanf("%d", &num);
+        printf("Factors of %d: ", num);
+        for (i = 1; i <= num; i++) {
+            if (num % i == 0) {
+                printf("%d ", i);
+            }
+        }
+        return 0;
+}
+
+
+6. Factorial of a Number:
+#include <stdio.h>
+int main() {
+        int num, i;
+        unsigned long long fact = 1;
+        printf("Enter a number: ");
+        scanf("%d", &num);
+        for (i = 1; i <= num; i++) {
+            fact *= i;
+        }
+        printf("Factorial of %d: %llu", num, fact);
+        return 0;
+}
